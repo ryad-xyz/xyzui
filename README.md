@@ -1,6 +1,7 @@
 ﻿# XYZUI Framework
 
 Modern CSS Framework for HTML5 - Alternative to shadcn/ui
+Everyone can contribut to this project.
 
 ## Getting Started
 
@@ -9,11 +10,9 @@ Modern CSS Framework for HTML5 - Alternative to shadcn/ui
 <link rel="stylesheet" href="dist/xyzui.css">
 `
 
-2. Start using XYZUI classes in your HTML
-
 ## Documentation
 
-See the docs/ folder for complete documentation.
+The documentation has not been made yet
 
 ## License
 
