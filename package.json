@@ -1,0 +1,21 @@
+﻿{
+    "version":  "1.0.0",
+    "license":  "MIT",
+    "keywords":  [
+                     "css",
+                     "framework",
+                     "ui",
+                     "html5",
+                     "components"
+                 ],
+    "scripts":  {
+                    "minify":  "node tools/minify.js",
+                    "build":  "node tools/build.js",
+                    "dev":  "npm run watch",
+                    "watch":  "node tools/watch.js"
+                },
+    "name":  "xyzui",
+    "description":  "Modern CSS Framework for HTML5 - Alternative to shadcn/ui",
+    "author":  "Your Name",
+    "main":  "dist/xyzui.css"
+}

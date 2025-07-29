@@ -1,0 +1,115 @@
+﻿/*!
+ * XYZUI Framework v1.0.0
+ * Modern CSS Framework for HTML5
+ * Alternative to shadcn/ui for pure HTML/CSS
+ * 
+ * Copyright (c) 2024 XYZUI
+ * Licensed under MIT License
+ * 
+ * https://github.com/your-username/xyzui
+ */
+
+/* ==========================================================================
+   CORE IMPORTS
+   ========================================================================== */
+
+/* CSS Reset - Modern reset for cross-browser consistency */
+@import './core/reset.css';
+
+/* CSS Variables - Design system tokens and custom properties */
+@import './core/variables.css';
+
+/* Theme System - Light/dark themes and variants */
+@import './core/themes.css';
+
+/* Base Styles - Typography and element foundations */
+@import './core/base.css';
+
+/* ==========================================================================
+   UTILITY IMPORTS (Optional - uncomment as needed)
+   ========================================================================== */
+
+ @import './utilities/layout.css'; 
+ @import './utilities/section.css'; 
+
+/* Typography Utilities - Text styling utilities */
+/* @import './utilities/typography.css'; */
+
+/* Color Utilities - Text and background color utilities */
+/* @import './utilities/colors.css'; */
+
+/* Border Utilities - Border and radius utilities */
+/* @import './utilities/borders.css'; */
+
+/* Shadow Utilities - Box shadow utilities */
+/* @import './utilities/shadows.css'; */
+
+/* Miscellaneous Utilities - Other helpful utilities */
+ @import './utilities/misc.css'; 
+
+/* ==========================================================================
+   COMPONENT IMPORTS (Optional - uncomment as needed)
+   ========================================================================== */
+
+/* Button Components */
+ @import './components/button/button.css';
+
+/* Form Components */
+/* @import './components/forms/input.css'; */
+/* @import './components/forms/select.css'; */
+/* @import './components/forms/textarea.css'; */
+
+/* Card Components */
+ @import './components/article/article.css'; 
+
+/* Navigation Components */
+/* @import './components/navigation/navbar.css'; */
+/* @import './components/navigation/breadcrumb.css'; */
+
+/* Feedback Components */
+/* @import './components/feedback/alert.css'; */
+/* @import './components/feedback/badge.css'; */
+
+/* ==========================================================================
+   FRAMEWORK INFORMATION
+   ========================================================================== */
+
+/**
+ * XYZUI Framework Usage:
+ * 
+ * 1. Core Only (Minimal):
+ *    - Just import this file for basic styling
+ *    - Includes reset, variables, themes, and base styles
+ *    - Perfect for custom projects
+ * 
+ * 2. With Utilities:
+ *    - Uncomment utility imports above
+ *    - Provides Tailwind-like utility classes
+ *    - Great for rapid development
+ * 
+ * 3. With Components:
+ *    - Uncomment component imports above
+ *    - Pre-built UI components ready to use
+ *    - Similar to shadcn/ui components
+ * 
+ * 4. Custom Build:
+ *    - Import only what you need
+ *    - Keep bundle size minimal
+ *    - Perfect for production
+ * 
+ * Theme Usage:
+ * - Add class="dark" for dark theme
+ * - Use data-theme="blue|green|red|etc" for color variants
+ * - Automatic system preference support included
+ * 
+ * CSS Variables:
+ * - All colors use HSL format for easy manipulation
+ * - Consistent spacing scale from 0-96
+ * - Typography scale with proper line heights
+ * - Component-specific variables included
+ * 
+ * Browser Support:
+ * - Modern browsers (Chrome 88+, Firefox 78+, Safari 14+)
+ * - CSS Custom Properties required
+ * - Progressive enhancement friendly
+ */

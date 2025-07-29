@@ -1,0 +1,33 @@
+﻿/* ================================== */
+/* Component - Article                   */
+/* ================================== */
+
+article {
+  background-color: var(--card);
+  color: var(--card-foreground);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+/* Varian 1: Fill */
+article[variant="fill"] {
+  background-color: var(--muted);
+  color: var(--card-foreground);
+  border: 1px solid transparent;
+}
+
+/* Varian 2: Outline */
+article[variant="outline"] {
+  background-color: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--border);
+}
+
+/* Varian 3: Combine */
+article[variant="primary"] {
+  background-color: var(--card);
+  color: var(--card-foreground);
+  border: 1px solid var(--primary);
+}

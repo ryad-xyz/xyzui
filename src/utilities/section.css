@@ -1,0 +1,120 @@
+/* ================================== */
+/* Component - Section                */
+/* ================================== */
+
+/*
+ * Aturan dasar untuk semua <section>.
+ * Secara default, section hanya sebuah blok tanpa gaya,
+ * memberikan kontrol penuh pada varian yang diterapkan.
+*/
+section {
+  display: block;
+  width: 100%;
+}
+
+
+/* ==================================
+   1. VARIAN STRUKTUR (Pembatas Lebar)
+   ================================== */
+
+/*
+ * [variant~="chassis"]
+ * Varian paling fundamental. Membatasi lebar konten agar
+ * rapi dan terpusat. Gunakan ini untuk hampir semua
+ * konten utama di halaman.
+*/
+section[variant~="container"] {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-6);
+  padding-right: var(--spacing-6);
+}
+
+/*
+ * [variant~="bleed"]
+ * Varian ini "menerobos" keluar untuk memenuhi lebar layar.
+ * Cocok untuk hero section, galeri, atau footer yang butuh
+ * latar belakang full-width.
+*/
+section[variant~="bleed"] {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-left: var(--spacing-6);
+  padding-right: var(--spacing-6);
+}
+
+
+/* ==================================
+   2. VARIAN JARAK (Padding Vertikal)
+   ================================== */
+
+/*
+ * [variant~="spaced"]
+ * Memberikan padding vertikal (atas & bawah) standar.
+ * Ini adalah varian jarak yang paling sering dipakai.
+*/
+section[variant~="spaced"] {
+  padding-top: var(--spacing-20);
+  padding-bottom: var(--spacing-20);
+}
+
+/*
+ * [variant~="spaced-sm"]
+ * Padding vertikal versi lebih kecil. Cocok untuk jarak
+ * antar bagian yang tidak terlalu jauh atau di dalam card.
+*/
+section[variant~="spaced-sm"] {
+  padding-top: var(--spacing-10);
+  padding-bottom: var(--spacing-10);
+}
+
+/*
+ * [variant~="spaced-lg"]
+ * Padding vertikal versi lebih besar. Gunakan untuk
+ * menciptakan ruang kosong yang signifikan antar bagian.
+*/
+section[variant~="spaced-lg"] {
+  padding-top: var(--spacing-32);
+  padding-bottom: var(--spacing-32);
+}
+
+section[variant~="spaced-xl"] {
+  padding-top: var(--spacing-64);
+  padding-bottom: var(--spacing-64);
+}
+
+/*
+ * [variant~="dense"]
+ * Padding vertikal yang sangat rapat. Berguna untuk
+ * header/navbar atau di dalam komponen yang sempit.
+*/
+section[variant~="navbar"] {
+  padding-top: var(--spacing-2);
+  padding-bottom: var(--spacing-2);
+}
+
+
+/* ==================================
+   3. VARIAN DEKORASI (Tampilan)
+   ================================== */
+
+/*
+ * [variant~="decorated"]
+ * Memberikan sedikit dekorasi, seperti garis batas atas
+ * untuk memisahkan section secara visual.
+*/
+section[variant~="decorated"] {
+  border-top: 1px solid var(--border);
+}
+
+/*
+ * [variant~="inverted"]
+ * Membalik skema warna, menggunakan warna latar belakang
+ * dari --muted. Sangat berguna untuk menonjolkan sebuah section.
+*/
+section[variant~="inverted"] {
+  background-color: var(--muted);
+  color: var(--muted-foreground);
+}

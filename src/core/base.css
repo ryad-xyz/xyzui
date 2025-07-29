@@ -1,0 +1,213 @@
+/*!
+ * XYZUI Framework - Base Styles
+ * Foundation styles for HTML elements
+ * Typography, forms, and element defaults
+ */
+
+
+/* ==========================================================================
+   BASE ELEMENT STYLES
+   ========================================================================== */
+
+html {
+  font-family: var(--font-sans);
+  font-display: block;
+  line-height: var(--leading-normal);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-display: block;
+  line-height: var(--leading-normal);
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+/* ==========================================================================
+   TYPOGRAPHY ELEMENTS
+   ========================================================================== */
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  scroll-margin-top: var(--spacing-20);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-tighter);
+}
+h1 {
+  font-size: var(--text-5xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-normal);
+  line-height: var(--text-5xl--line-height);
+}
+h2 {
+  font-size: var(--text-3xl);
+  line-height: var(--leading-tight);
+  padding-bottom: var(--spacing-2);
+  border-bottom: 1px solid var(--border);
+}
+h3 {
+  font-size: var(--text-2xl);
+  line-height: var(--leading-snug);
+}
+
+/* Paragraphs and text */
+p {
+  line-height: var(--leading-relaxed);
+}
+
+/* Lead text */
+.lead {
+  font-size: var(--text-xl);
+  color: var(--muted-foreground);
+}
+
+/* Muted text */
+.muted {
+  font-size: var(--text-sm);
+  color: var(--muted-foreground);
+}
+
+/* Links */
+a {
+  color: var(--muted-foreground);
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: none;
+  color: var(--foreground);
+}
+a:focus-visible {
+  outline: 2px solid var(--ring);
+  border-radius: var(--radius-md);
+}
+a button:focus-visible {
+  outline: 2px solid var(--ring);
+  border-radius: var(--radius-md);
+}
+
+/* Code elements */
+code {
+  position: relative;
+  outline-style: none;
+  border-radius: var(--radius-sm);
+  padding-block: 0;
+  padding-inline: var(--spacing-1-5);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  background-color: var(--muted);
+  color: var(--foreground);
+}
+pre {
+  margin: var(--spacing-6) 0;
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-4);
+  background-color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+pre code {
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+}
+
+/* Quotes */
+blockquote {
+  margin: var(--spacing-6) 0;
+  padding-left: var(--spacing-6);
+  border-left: 4px solid var(--border);
+  font-style: italic;
+  color: var(--muted-foreground);
+}
+
+/* Lists */
+ul, ol {
+  padding-left: var(--spacing-6);
+  margin: var(--spacing-4) 0;
+}
+ul {
+  list-style-type: disc;
+}
+ol {
+  list-style-type: decimal;
+}
+li {
+  margin-bottom: var(--spacing-2);
+}
+
+/* ==========================================================================
+   TABLE ELEMENTS
+   ========================================================================== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--spacing-6) 0;
+}
+th {
+  background-color: var(--muted);
+  font-weight: var(--font-semibold);
+  text-align: left;
+  padding: var(--spacing-3) var(--spacing-4);
+  border: 1px solid var(--border);
+}
+td {
+  padding: var(--spacing-3) var(--spacing-4);
+  border: 1px solid var(--border);
+}
+
+/* Horizontal rule */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: var(--spacing-8) 0;
+}
+
+/* Mark/highlight */
+mark {
+  background-color: oklch(var(--warning) / 0.3);
+  color: var(--foreground);
+  padding: var(--spacing-0-5) var(--spacing-1);
+  border-radius: var(--radius-sm);
+}
+
+/* Abbreviation */
+abbr[title] {
+  text-decoration: underline dotted;
+  cursor: help;
+}
+
+/* Details and summary */
+details {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-4);
+  margin: var(--spacing-4) 0;
+}
+summary {
+  font-weight: var(--font-semibold);
+  cursor: pointer;
+  padding: var(--spacing-2);
+  margin: calc(var(--spacing-4) * -1); /* Trik untuk membuat area klik lebih besar */
+  margin-bottom: 0;
+  border-radius: var(--radius-md);
+  transition: var(--transition-colors);
+}
+summary:hover {
+  background-color: var(--muted);
+}
+details[open] > summary {
+  margin-bottom: var(--spacing-4);
+}
+
+/* Selection styling */
+::selection {
+  background-color: oklch(var(--primary) / 0.8);
+  color: var(--primary-foreground);
+}

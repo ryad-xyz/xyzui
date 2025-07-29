@@ -1,0 +1,876 @@
+/*!
+ * XYZUI Framework - Theme Definition
+ * Modular theme system based on Style, Base, and Accent colors.
+ * Color palettes are based on shadcn/ui using OKLCH color space.
+ * Updated to use variable tokens from v2.variables.css
+ */
+
+/* ==========================================================================
+   1. THEME STRUCTURE DEFINITION
+   Mendefinisikan variabel semantik yang akan digunakan di seluruh UI.
+   Nilainya diambil dari variabel palet yang akan didefinisikan per tema.
+   ========================================================================== */
+
+:root {
+  --background: var(--palette-background);
+  --foreground: var(--palette-foreground);
+  --card: var(--palette-card);
+  --card-foreground: var(--palette-card-foreground);
+  --popover: var(--palette-popover);
+  --popover-foreground: var(--palette-popover-foreground);
+  --primary: var(--palette-primary);
+  --primary-foreground: var(--palette-primary-foreground);
+  --secondary: var(--palette-secondary);
+  --secondary-foreground: var(--palette-secondary-foreground);
+  --muted: var(--palette-muted);
+  --muted-foreground: var(--palette-muted-foreground);
+  --accent: var(--palette-accent);
+  --accent-foreground: var(--palette-accent-foreground);
+  --destructive: var(--palette-destructive);
+  --destructive-foreground: var(--palette-destructive-foreground);
+  --border: var(--palette-border);
+  --input: var(--palette-input);
+  --ring: var(--palette-ring);
+
+  --chart-1: var(--palette-chart-1);
+  --chart-2: var(--palette-chart-2);
+  --chart-3: var(--palette-chart-3);
+  --chart-4: var(--palette-chart-4);
+  --chart-5: var(--palette-chart-5);
+
+  --sidebar: var(--palette-sidebar);
+  --sidebar-foreground: var(--palette-sidebar-foreground);
+  --sidebar-primary: var(--palette-sidebar-primary);
+  --sidebar-primary-foreground: var(--palette-sidebar-primary-foreground);
+  --sidebar-accent: var(--palette-sidebar-accent);
+  --sidebar-accent-foreground: var(--palette-sidebar-accent-foreground);
+  --sidebar-border: var(--palette-sidebar-border);
+  --sidebar-ring: var(--palette-sidebar-ring);
+
+  --color-success: var(--palette-success);
+  --color-success-foreground: var(--palette-success-foreground);
+  --color-warning: var(--palette-warning);
+  --color-warning-foreground: var(--palette-warning-foreground);
+  --color-info: var(--palette-info);
+  --color-info-foreground: var(--palette-info-foreground);
+}
+
+.dark {
+  --background: var(--palette-dark-background);
+  --foreground: var(--palette-dark-foreground);
+  --card: var(--palette-dark-card);
+  --card-foreground: var(--palette-dark-card-foreground);
+  --popover: var(--palette-dark-popover);
+  --popover-foreground: var(--palette-dark-popover-foreground);
+  --primary: var(--palette-dark-primary);
+  --primary-foreground: var(--palette-dark-primary-foreground);
+  --secondary: var(--palette-dark-secondary);
+  --secondary-foreground: var(--palette-dark-secondary-foreground);
+  --muted: var(--palette-dark-muted);
+  --muted-foreground: var(--palette-dark-muted-foreground);
+  --accent: var(--palette-dark-accent);
+  --accent-foreground: var(--palette-dark-accent-foreground);
+  --destructive: var(--palette-dark-destructive);
+  --destructive-foreground: var(--palette-dark-destructive-foreground);
+  --border: var(--palette-dark-border);
+  --input: var(--palette-dark-input);
+  --ring: var(--palette-dark-ring);
+
+  --chart-1: var(--palette-dark-chart-1);
+  --chart-2: var(--palette-dark-chart-2);
+  --chart-3: var(--palette-dark-chart-3);
+  --chart-4: var(--palette-dark-chart-4);
+  --chart-5: var(--palette-dark-chart-5);
+
+  --sidebar: var(--palette-dark-sidebar);
+  --sidebar-foreground: var(--palette-dark-sidebar-foreground);
+  --sidebar-primary: var(--palette-dark-sidebar-primary);
+  --sidebar-primary-foreground: var(--palette-dark-sidebar-primary-foreground);
+  --sidebar-accent: var(--palette-dark-sidebar-accent);
+  --sidebar-accent-foreground: var(--palette-dark-sidebar-accent-foreground);
+  --sidebar-border: var(--palette-dark-sidebar-border);
+  --sidebar-ring: var(--palette-dark-sidebar-ring);
+
+  --color-success: var(--palette-dark-success);
+  --color-success-foreground: var(--palette-dark-success-foreground);
+  --color-warning: var(--palette-dark-warning);
+  --color-warning-foreground: var(--palette-dark-warning-foreground);
+  --color-info: var(--palette-dark-info);
+  --color-info-foreground: var(--palette-dark-info-foreground);
+}
+
+/* ==========================================================================
+   2. BASE COLOR DEFINITIONS (Kanvas + Aksen Default)
+   ========================================================================== */
+
+/* ZINC (Default Base) */
+:root,
+[xyz-base="zinc"] {
+  /* Light Palette */
+  --palette-background: var(--color-white);
+  --palette-foreground: var(--color-zinc-950);
+  --palette-card: var(--color-white);
+  --palette-card-foreground: var(--color-zinc-950);
+  --palette-popover: var(--color-white);
+  --palette-popover-foreground: var(--color-zinc-950);
+  --palette-primary: var(--color-zinc-900);
+  --palette-primary-foreground: var(--color-zinc-50);
+  --palette-secondary: var(--color-zinc-100);
+  --palette-secondary-foreground: var(--color-zinc-900);
+  --palette-muted: var(--color-zinc-100);
+  --palette-muted-foreground: var(--color-zinc-500);
+  --palette-accent: var(--color-zinc-100);
+  --palette-accent-foreground: var(--color-zinc-900);
+  --palette-destructive: var(--color-red-600);
+  --palette-destructive-foreground: var(--color-white);
+  --palette-border: var(--color-zinc-200);
+  --palette-input: var(--color-zinc-200);
+  --palette-ring: var(--color-zinc-400);
+  --palette-chart-1: var(--color-orange-600);
+  --palette-chart-2: var(--color-teal-600);
+  --palette-chart-3: var(--color-cyan-900);
+  --palette-chart-4: var(--color-amber-400);
+  --palette-chart-5: var(--color-amber-500);
+  --palette-sidebar: var(--color-zinc-50);
+  --palette-sidebar-foreground: var(--color-zinc-950);
+  --palette-sidebar-primary: var(--color-zinc-900);
+  --palette-sidebar-primary-foreground: var(--color-zinc-50);
+  --palette-sidebar-accent: var(--color-zinc-100);
+  --palette-sidebar-accent-foreground: var(--color-zinc-900);
+  --palette-sidebar-border: var(--color-zinc-200);
+  --palette-sidebar-ring: var(--color-zinc-400);
+  --palette-success: var(--color-green-600);
+  --palette-success-foreground: var(--color-white);
+  --palette-warning: var(--color-amber-500);
+  --palette-warning-foreground: var(--color-zinc-950);
+  --palette-info: var(--color-blue-600);
+  --palette-info-foreground: var(--color-white);
+
+  /* Dark Palette */
+  --palette-dark-background: var(--color-zinc-950);
+  --palette-dark-foreground: var(--color-zinc-50);
+  --palette-dark-card: var(--color-zinc-900);
+  --palette-dark-card-foreground: var(--color-zinc-50);
+  --palette-dark-popover: var(--color-zinc-900);
+  --palette-dark-popover-foreground: var(--color-zinc-50);
+  --palette-dark-primary: var(--color-zinc-200);
+  --palette-dark-primary-foreground: var(--color-zinc-900);
+  --palette-dark-secondary: var(--color-zinc-800);
+  --palette-dark-secondary-foreground: var(--color-zinc-50);
+  --palette-dark-muted: var(--color-zinc-800);
+  --palette-dark-muted-foreground: var(--color-zinc-400);
+  --palette-dark-accent: var(--color-zinc-800);
+  --palette-dark-accent-foreground: var(--color-zinc-50);
+  --palette-dark-destructive: color-mix(in oklab, var(--color-red-400) 60%, transparent);
+  --palette-dark-destructive-foreground: var(--color-white);
+  --palette-dark-border: var(--color-zinc-800);
+  --palette-dark-input: var(--color-zinc-800);
+  --palette-dark-ring: var(--color-zinc-500);
+  --palette-dark-chart-1: var(--color-blue-700);
+  --palette-dark-chart-2: var(--color-emerald-500);
+  --palette-dark-chart-3: var(--color-amber-500);
+  --palette-dark-chart-4: var(--color-purple-600);
+  --palette-dark-chart-5: var(--color-rose-600);
+  --palette-dark-sidebar: var(--color-zinc-900);
+  --palette-dark-sidebar-foreground: var(--color-zinc-50);
+  --palette-dark-sidebar-primary: var(--color-blue-700);
+  --palette-dark-sidebar-primary-foreground: var(--color-zinc-50);
+  --palette-dark-sidebar-accent: var(--color-zinc-800);
+  --palette-dark-sidebar-accent-foreground: var(--color-zinc-50);
+  --palette-dark-sidebar-border: var(--color-zinc-800);
+  --palette-dark-sidebar-ring: var(--color-zinc-500);
+  --palette-dark-success: var(--color-green-400);
+  --palette-dark-success-foreground: var(--color-zinc-950);
+  --palette-dark-warning: var(--color-amber-400);
+  --palette-dark-warning-foreground: var(--color-zinc-950);
+  --palette-dark-info: var(--color-blue-400);
+  --palette-dark-info-foreground: var(--color-zinc-950);
+}
+
+/* SLATE */
+[xyz-base="slate"] {
+  --palette-background: var(--color-white);
+  --palette-foreground: var(--color-slate-950);
+  --palette-card: var(--color-white);
+  --palette-card-foreground: var(--color-slate-950);
+  --palette-popover: var(--color-white);
+  --palette-popover-foreground: var(--color-slate-950);
+  --palette-primary: var(--color-slate-900);
+  --palette-primary-foreground: var(--color-slate-50);
+  --palette-secondary: var(--color-slate-100);
+  --palette-secondary-foreground: var(--color-slate-900);
+  --palette-muted: var(--color-slate-100);
+  --palette-muted-foreground: var(--color-slate-500);
+  --palette-accent: var(--color-slate-100);
+  --palette-accent-foreground: var(--color-slate-900);
+  --palette-destructive: var(--color-red-600);
+  --palette-destructive-foreground: var(--color-white);
+  --palette-border: var(--color-slate-200);
+  --palette-input: var(--color-slate-200);
+  --palette-ring: var(--color-slate-400);
+  --palette-chart-1: var(--color-orange-600);
+  --palette-chart-2: var(--color-teal-600);
+  --palette-chart-3: var(--color-cyan-900);
+  --palette-chart-4: var(--color-amber-400);
+  --palette-chart-5: var(--color-amber-500);
+  --palette-sidebar: var(--color-slate-50);
+  --palette-sidebar-foreground: var(--color-slate-950);
+  --palette-sidebar-primary: var(--color-slate-900);
+  --palette-sidebar-primary-foreground: var(--color-slate-50);
+  --palette-sidebar-accent: var(--color-slate-100);
+  --palette-sidebar-accent-foreground: var(--color-slate-900);
+  --palette-sidebar-border: var(--color-slate-200);
+  --palette-sidebar-ring: var(--color-slate-400);
+  --palette-success: var(--color-green-600);
+  --palette-success-foreground: var(--color-white);
+  --palette-warning: var(--color-amber-500);
+  --palette-warning-foreground: var(--color-slate-950);
+  --palette-info: var(--color-blue-600);
+  --palette-info-foreground: var(--color-white);
+
+  --palette-dark-background: var(--color-slate-950);
+  --palette-dark-foreground: var(--color-slate-50);
+  --palette-dark-card: var(--color-slate-900);
+  --palette-dark-card-foreground: var(--color-slate-50);
+  --palette-dark-popover: var(--color-slate-900);
+  --palette-dark-popover-foreground: var(--color-slate-50);
+  --palette-dark-primary: var(--color-slate-200);
+  --palette-dark-primary-foreground: var(--color-slate-900);
+  --palette-dark-secondary: var(--color-slate-800);
+  --palette-dark-secondary-foreground: var(--color-slate-50);
+  --palette-dark-muted: var(--color-slate-800);
+  --palette-dark-muted-foreground: var(--color-slate-400);
+  --palette-dark-accent: var(--color-slate-800);
+  --palette-dark-accent-foreground: var(--color-slate-50);
+  --palette-dark-destructive: color-mix(in oklab, var(--color-red-400) 60%, transparent);
+  --palette-dark-destructive-foreground: var(--color-white);
+  --palette-dark-border: var(--color-slate-800);
+  --palette-dark-input: var(--color-slate-800);
+  --palette-dark-ring: var(--color-slate-500);
+  --palette-dark-chart-1: var(--color-blue-700);
+  --palette-dark-chart-2: var(--color-emerald-500);
+  --palette-dark-chart-3: var(--color-amber-500);
+  --palette-dark-chart-4: var(--color-purple-600);
+  --palette-dark-chart-5: var(--color-rose-600);
+  --palette-dark-sidebar: var(--color-slate-900);
+  --palette-dark-sidebar-foreground: var(--color-slate-50);
+  --palette-dark-sidebar-primary: var(--color-blue-700);
+  --palette-dark-sidebar-primary-foreground: var(--color-slate-50);
+  --palette-dark-sidebar-accent: var(--color-slate-800);
+  --palette-dark-sidebar-accent-foreground: var(--color-slate-50);
+  --palette-dark-sidebar-border: var(--color-slate-800);
+  --palette-dark-sidebar-ring: var(--color-slate-500);
+  --palette-dark-success: var(--color-green-400);
+  --palette-dark-success-foreground: var(--color-slate-950);
+  --palette-dark-warning: var(--color-amber-400);
+  --palette-dark-warning-foreground: var(--color-slate-950);
+  --palette-dark-info: var(--color-blue-400);
+  --palette-dark-info-foreground: var(--color-slate-950);
+}
+
+/* STONE */
+[xyz-base="stone"] {
+  --palette-background: var(--color-white);
+  --palette-foreground: var(--color-stone-950);
+  --palette-card: var(--color-white);
+  --palette-card-foreground: var(--color-stone-950);
+  --palette-popover: var(--color-white);
+  --palette-popover-foreground: var(--color-stone-950);
+  --palette-primary: var(--color-stone-900);
+  --palette-primary-foreground: var(--color-stone-50);
+  --palette-secondary: var(--color-stone-100);
+  --palette-secondary-foreground: var(--color-stone-900);
+  --palette-muted: var(--color-stone-100);
+  --palette-muted-foreground: var(--color-stone-500);
+  --palette-accent: var(--color-stone-100);
+  --palette-accent-foreground: var(--color-stone-900);
+  --palette-destructive: var(--color-red-600);
+  --palette-destructive-foreground: var(--color-white);
+  --palette-border: var(--color-stone-200);
+  --palette-input: var(--color-stone-200);
+  --palette-ring: var(--color-stone-400);
+  --palette-chart-1: var(--color-orange-600);
+  --palette-chart-2: var(--color-teal-600);
+  --palette-chart-3: var(--color-cyan-900);
+  --palette-chart-4: var(--color-amber-400);
+  --palette-chart-5: var(--color-amber-500);
+  --palette-sidebar: var(--color-stone-50);
+  --palette-sidebar-foreground: var(--color-stone-950);
+  --palette-sidebar-primary: var(--color-stone-900);
+  --palette-sidebar-primary-foreground: var(--color-stone-50);
+  --palette-sidebar-accent: var(--color-stone-100);
+  --palette-sidebar-accent-foreground: var(--color-stone-900);
+  --palette-sidebar-border: var(--color-stone-200);
+  --palette-sidebar-ring: var(--color-stone-400);
+  --palette-success: var(--color-green-600);
+  --palette-success-foreground: var(--color-white);
+  --palette-warning: var(--color-amber-500);
+  --palette-warning-foreground: var(--color-stone-950);
+  --palette-info: var(--color-blue-600);
+  --palette-info-foreground: var(--color-white);
+
+  --palette-dark-background: var(--color-stone-950);
+  --palette-dark-foreground: var(--color-stone-50);
+  --palette-dark-card: var(--color-stone-900);
+  --palette-dark-card-foreground: var(--color-stone-50);
+  --palette-dark-popover: var(--color-stone-900);
+  --palette-dark-popover-foreground: var(--color-stone-50);
+  --palette-dark-primary: var(--color-stone-200);
+  --palette-dark-primary-foreground: var(--color-stone-900);
+  --palette-dark-secondary: var(--color-stone-800);
+  --palette-dark-secondary-foreground: var(--color-stone-50);
+  --palette-dark-muted: var(--color-stone-800);
+  --palette-dark-muted-foreground: var(--color-stone-400);
+  --palette-dark-accent: var(--color-stone-800);
+  --palette-dark-accent-foreground: var(--color-stone-50);
+  --palette-dark-destructive: color-mix(in oklab, var(--color-red-400) 60%, transparent);
+  --palette-dark-destructive-foreground: var(--color-white);
+  --palette-dark-border: var(--color-stone-800);
+  --palette-dark-input: var(--color-stone-800);
+  --palette-dark-ring: var(--color-stone-500);
+  --palette-dark-chart-1: var(--color-blue-700);
+  --palette-dark-chart-2: var(--color-emerald-500);
+  --palette-dark-chart-3: var(--color-amber-500);
+  --palette-dark-chart-4: var(--color-purple-600);
+  --palette-dark-chart-5: var(--color-rose-600);
+  --palette-dark-sidebar: var(--color-stone-900);
+  --palette-dark-sidebar-foreground: var(--color-stone-50);
+  --palette-dark-sidebar-primary: var(--color-blue-700);
+  --palette-dark-sidebar-primary-foreground: var(--color-stone-50);
+  --palette-dark-sidebar-accent: var(--color-stone-800);
+  --palette-dark-sidebar-accent-foreground: var(--color-stone-50);
+  --palette-dark-sidebar-border: var(--color-stone-800);
+  --palette-dark-sidebar-ring: var(--color-stone-500);
+  --palette-dark-success: var(--color-green-400);
+  --palette-dark-success-foreground: var(--color-stone-950);
+  --palette-dark-warning: var(--color-amber-400);
+  --palette-dark-warning-foreground: var(--color-stone-950);
+  --palette-dark-info: var(--color-blue-400);
+  --palette-dark-info-foreground: var(--color-stone-950);
+}
+
+/* GRAY */
+[xyz-base="gray"] {
+  --palette-background: var(--color-white);
+  --palette-foreground: var(--color-gray-950);
+  --palette-card: var(--color-white);
+  --palette-card-foreground: var(--color-gray-950);
+  --palette-popover: var(--color-white);
+  --palette-popover-foreground: var(--color-gray-950);
+  --palette-primary: var(--color-gray-900);
+  --palette-primary-foreground: var(--color-gray-50);
+  --palette-secondary: var(--color-gray-100);
+  --palette-secondary-foreground: var(--color-gray-900);
+  --palette-muted: var(--color-gray-100);
+  --palette-muted-foreground: var(--color-gray-500);
+  --palette-accent: var(--color-gray-100);
+  --palette-accent-foreground: var(--color-gray-900);
+  --palette-destructive: var(--color-red-600);
+  --palette-destructive-foreground: var(--color-white);
+  --palette-border: var(--color-gray-200);
+  --palette-input: var(--color-gray-200);
+  --palette-ring: var(--color-gray-400);
+  --palette-chart-1: var(--color-orange-600);
+  --palette-chart-2: var(--color-teal-600);
+  --palette-chart-3: var(--color-cyan-900);
+  --palette-chart-4: var(--color-amber-400);
+  --palette-chart-5: var(--color-amber-500);
+  --palette-sidebar: var(--color-gray-50);
+  --palette-sidebar-foreground: var(--color-gray-950);
+  --palette-sidebar-primary: var(--color-gray-900);
+  --palette-sidebar-primary-foreground: var(--color-gray-50);
+  --palette-sidebar-accent: var(--color-gray-100);
+  --palette-sidebar-accent-foreground: var(--color-gray-900);
+  --palette-sidebar-border: var(--color-gray-200);
+  --palette-sidebar-ring: var(--color-gray-400);
+  --palette-success: var(--color-green-600);
+  --palette-success-foreground: var(--color-white);
+  --palette-warning: var(--color-amber-500);
+  --palette-warning-foreground: var(--color-gray-950);
+  --palette-info: var(--color-blue-600);
+  --palette-info-foreground: var(--color-white);
+
+  --palette-dark-background: var(--color-gray-950);
+  --palette-dark-foreground: var(--color-gray-50);
+  --palette-dark-card: var(--color-gray-900);
+  --palette-dark-card-foreground: var(--color-gray-50);
+  --palette-dark-popover: var(--color-gray-900);
+  --palette-dark-popover-foreground: var(--color-gray-50);
+  --palette-dark-primary: var(--color-gray-200);
+  --palette-dark-primary-foreground: var(--color-gray-900);
+  --palette-dark-secondary: var(--color-gray-800);
+  --palette-dark-secondary-foreground: var(--color-gray-50);
+  --palette-dark-muted: var(--color-gray-800);
+  --palette-dark-muted-foreground: var(--color-gray-400);
+  --palette-dark-accent: var(--color-gray-800);
+  --palette-dark-accent-foreground: var(--color-gray-50);
+  --palette-dark-destructive: color-mix(in oklab, var(--color-red-400) 60%, transparent);
+  --palette-dark-destructive-foreground: var(--color-white);
+  --palette-dark-border: var(--color-gray-800);
+  --palette-dark-input: var(--color-gray-800);
+  --palette-dark-ring: var(--color-gray-500);
+  --palette-dark-chart-1: var(--color-blue-700);
+  --palette-dark-chart-2: var(--color-emerald-500);
+  --palette-dark-chart-3: var(--color-amber-500);
+  --palette-dark-chart-4: var(--color-purple-600);
+  --palette-dark-chart-5: var(--color-rose-600);
+  --palette-dark-sidebar: var(--color-gray-900);
+  --palette-dark-sidebar-foreground: var(--color-gray-50);
+  --palette-dark-sidebar-primary: var(--color-blue-700);
+  --palette-dark-sidebar-primary-foreground: var(--color-gray-50);
+  --palette-dark-sidebar-accent: var(--color-gray-800);
+  --palette-dark-sidebar-accent-foreground: var(--color-gray-50);
+  --palette-dark-sidebar-border: var(--color-gray-800);
+  --palette-dark-sidebar-ring: var(--color-gray-500);
+  --palette-dark-success: var(--color-green-400);
+  --palette-dark-success-foreground: var(--color-gray-950);
+  --palette-dark-warning: var(--color-amber-400);
+  --palette-dark-warning-foreground: var(--color-gray-950);
+  --palette-dark-info: var(--color-blue-400);
+  --palette-dark-info-foreground: var(--color-gray-950);
+}
+
+/* NEUTRAL */
+[xyz-base="neutral"] {
+  --palette-background: var(--color-white);
+  --palette-foreground: var(--color-neutral-950);
+  --palette-card: var(--color-white);
+  --palette-card-foreground: var(--color-neutral-950);
+  --palette-popover: var(--color-white);
+  --palette-popover-foreground: var(--color-neutral-950);
+  --palette-primary: var(--color-neutral-900);
+  --palette-primary-foreground: var(--color-neutral-50);
+  --palette-secondary: var(--color-neutral-100);
+  --palette-secondary-foreground: var(--color-neutral-900);
+  --palette-muted: var(--color-neutral-100);
+  --palette-muted-foreground: var(--color-neutral-500);
+  --palette-accent: var(--color-neutral-100);
+  --palette-accent-foreground: var(--color-neutral-900);
+  --palette-destructive: var(--color-red-600);
+  --palette-destructive-foreground: var(--color-white);
+  --palette-border: var(--color-neutral-200);
+  --palette-input: var(--color-neutral-200);
+  --palette-ring: var(--color-neutral-400);
+  --palette-chart-1: var(--color-orange-600);
+  --palette-chart-2: var(--color-teal-600);
+  --palette-chart-3: var(--color-cyan-900);
+  --palette-chart-4: var(--color-amber-400);
+  --palette-chart-5: var(--color-amber-500);
+  --palette-sidebar: var(--color-neutral-50);
+  --palette-sidebar-foreground: var(--color-neutral-950);
+  --palette-sidebar-primary: var(--color-neutral-900);
+  --palette-sidebar-primary-foreground: var(--color-neutral-50);
+  --palette-sidebar-accent: var(--color-neutral-100);
+  --palette-sidebar-accent-foreground: var(--color-neutral-900);
+  --palette-sidebar-border: var(--color-neutral-200);
+  --palette-sidebar-ring: var(--color-neutral-400);
+  --palette-success: var(--color-green-600);
+  --palette-success-foreground: var(--color-white);
+  --palette-warning: var(--color-amber-500);
+  --palette-warning-foreground: var(--color-neutral-950);
+  --palette-info: var(--color-blue-600);
+  --palette-info-foreground: var(--color-white);
+
+  --palette-dark-background: var(--color-neutral-950);
+  --palette-dark-foreground: var(--color-neutral-50);
+  --palette-dark-card: var(--color-neutral-900);
+  --palette-dark-card-foreground: var(--color-neutral-50);
+  --palette-dark-popover: var(--color-neutral-900);
+  --palette-dark-popover-foreground: var(--color-neutral-50);
+  --palette-dark-primary: var(--color-neutral-200);
+  --palette-dark-primary-foreground: var(--color-neutral-900);
+  --palette-dark-secondary: var(--color-neutral-800);
+  --palette-dark-secondary-foreground: var(--color-neutral-50);
+  --palette-dark-muted: var(--color-neutral-800);
+  --palette-dark-muted-foreground: var(--color-neutral-400);
+  --palette-dark-accent: var(--color-neutral-800);
+  --palette-dark-accent-foreground: var(--color-neutral-50);
+  --palette-dark-destructive: color-mix(in oklab, var(--color-red-400) 60%, transparent);
+  --palette-dark-destructive-foreground: var(--color-white);
+  --palette-dark-border: var(--color-neutral-800);
+  --palette-dark-input: var(--color-neutral-800);
+  --palette-dark-ring: var(--color-neutral-500);
+  --palette-dark-chart-1: var(--color-blue-700);
+  --palette-dark-chart-2: var(--color-emerald-500);
+  --palette-dark-chart-3: var(--color-amber-500);
+  --palette-dark-chart-4: var(--color-purple-600);
+  --palette-dark-chart-5: var(--color-rose-600);
+  --palette-dark-sidebar: var(--color-neutral-900);
+  --palette-dark-sidebar-foreground: var(--color-neutral-50);
+  --palette-dark-sidebar-primary: var(--color-blue-700);
+  --palette-dark-sidebar-primary-foreground: var(--color-neutral-50);
+  --palette-dark-sidebar-accent: var(--color-neutral-800);
+  --palette-dark-sidebar-accent-foreground: var(--color-neutral-50);
+  --palette-dark-sidebar-border: var(--color-neutral-800);
+  --palette-dark-sidebar-ring: var(--color-neutral-500);
+  --palette-dark-success: var(--color-green-400);
+  --palette-dark-success-foreground: var(--color-neutral-950);
+  --palette-dark-warning: var(--color-amber-400);
+  --palette-dark-warning-foreground: var(--color-neutral-950);
+  --palette-dark-info: var(--color-blue-400);
+  --palette-dark-info-foreground: var(--color-neutral-950);
+}
+
+/* ==========================================================================
+   3. ACCENT COLOR OVERRIDES (Hiasan Murni)
+   ========================================================================== */
+
+/* RED */
+[xyz-accent="red"] {
+  --palette-primary: var(--color-red-600);
+  --palette-primary-foreground: var(--color-red-50);
+  --palette-ring: var(--color-red-600);
+}
+[xyz-accent="red"].dark {
+  --palette-dark-primary: var(--color-red-400);
+  --palette-dark-primary-foreground: var(--color-neutral-950);
+  --palette-dark-ring: var(--color-red-400);
+}
+
+/* ROSE */
+[xyz-accent="rose"] {
+  --palette-primary: var(--color-rose-500);
+  --palette-primary-foreground: var(--color-white);
+  --palette-ring: var(--color-rose-500);
+}
+[xyz-accent="rose"].dark {
+  --palette-dark-primary: var(--color-rose-400);
+  --palette-dark-primary-foreground: var(--color-neutral-900);
+  --palette-dark-ring: var(--color-rose-400);
+}
+
+/* ORANGE */
+[xyz-accent="orange"] {
+  --palette-primary: var(--color-orange-600);
+  --palette-primary-foreground: var(--color-neutral-900);
+  --palette-ring: var(--color-orange-600);
+}
+[xyz-accent="orange"].dark {
+  --palette-dark-primary: var(--color-orange-400);
+  --palette-dark-primary-foreground: var(--color-neutral-800);
+  --palette-dark-ring: var(--color-orange-400);
+}
+
+/* GREEN */
+[xyz-accent="green"] {
+  --palette-primary: var(--color-green-600);
+  --palette-primary-foreground: var(--color-white);
+  --palette-ring: var(--color-green-600);
+}
+[xyz-accent="green"].dark {
+  --palette-dark-primary: var(--color-green-400);
+  --palette-dark-primary-foreground: var(--color-neutral-950);
+  --palette-dark-ring: var(--color-green-400);
+}
+
+/* BLUE */
+[xyz-accent="blue"] {
+  --palette-primary: var(--color-blue-600);
+  --palette-primary-foreground: var(--color-white);
+  --palette-ring: var(--color-blue-600);
+}
+[xyz-accent="blue"].dark {
+  --palette-dark-primary: var(--color-blue-400);
+  --palette-dark-primary-foreground: var(--color-neutral-950);
+  --palette-dark-ring: var(--color-blue-400);
+}
+
+/* YELLOW */
+[xyz-accent="yellow"] {
+  --palette-primary: var(--color-yellow-500);
+  --palette-primary-foreground: var(--color-neutral-900);
+  --palette-ring: var(--color-yellow-500);
+}
+[xyz-accent="yellow"].dark {
+  --palette-dark-primary: var(--color-yellow-400);
+  --palette-dark-primary-foreground: var(--color-neutral-800);
+  --palette-dark-ring: var(--color-yellow-400);
+}
+
+/* VIOLET */
+[xyz-accent="violet"] {
+  --palette-primary: var(--color-violet-600);
+  --palette-primary-foreground: var(--color-white);
+  --palette-ring: var(--color-violet-600);
+}
+[xyz-accent="violet"].dark {
+  --palette-dark-primary: var(--color-violet-400);
+  --palette-dark-primary-foreground: var(--color-neutral-950);
+  --palette-dark-ring: var(--color-violet-400);
+}
+
+/* INDIGO */
+[xyz-accent="indigo"] {
+  --palette-primary: var(--color-indigo-600);
+  --palette-primary-foreground: var(--color-white);
+  --palette-ring: var(--color-indigo-600);
+}
+[xyz-accent="indigo"].dark {
+  --palette-dark-primary: var(--color-indigo-400);
+  --palette-dark-primary-foreground: var(--color-neutral-950);
+  --palette-dark-ring: var(--color-indigo-400);
+}
+
+/* PURPLE */
+[xyz-accent="purple"] {
+  --palette-primary: var(--color-purple-600);
+  --palette-primary-foreground: var(--color-white);
+  --palette-ring: var(--color-purple-600);
+}
+[xyz-accent="purple"].dark {
+  --palette-dark-primary: var(--color-purple-400);
+  --palette-dark-primary-foreground: var(--color-neutral-950);
+  --palette-dark-ring: var(--color-purple-400);
+}
+
+/* PINK */
+[xyz-accent="pink"] {
+  --palette-primary: var(--color-pink-600);
+  --palette-primary-foreground: var(--color-white);
+  --palette-ring: var(--color-pink-600);
+}
+[xyz-accent="pink"].dark {
+  --palette-dark-primary: var(--color-pink-400);
+  --palette-dark-primary-foreground: var(--color-neutral-950);
+  --palette-dark-ring: var(--color-pink-400);
+}
+
+/* FUCHSIA */
+[xyz-accent="fuchsia"] {
+  --palette-primary: var(--color-fuchsia-600);
+  --palette-primary-foreground: var(--color-white);
+  --palette-ring: var(--color-fuchsia-600);
+}
+[xyz-accent="fuchsia"].dark {
+  --palette-dark-primary: var(--color-fuchsia-400);
+  --palette-dark-primary-foreground: var(--color-neutral-950);
+  --palette-dark-ring: var(--color-fuchsia-400);
+}
+
+/* EMERALD */
+[xyz-accent="emerald"] {
+  --palette-primary: var(--color-emerald-600);
+  --palette-primary-foreground: var(--color-white);
+  --palette-ring: var(--color-emerald-600);
+}
+[xyz-accent="emerald"].dark {
+  --palette-dark-primary: var(--color-emerald-400);
+  --palette-dark-primary-foreground: var(--color-neutral-950);
+  --palette-dark-ring: var(--color-emerald-400);
+}
+
+/* TEAL */
+[xyz-accent="teal"] {
+  --palette-primary: var(--color-teal-600);
+  --palette-primary-foreground: var(--color-white);
+  --palette-ring: var(--color-teal-600);
+}
+[xyz-accent="teal"].dark {
+  --palette-dark-primary: var(--color-teal-400);
+  --palette-dark-primary-foreground: var(--color-neutral-950);
+  --palette-dark-ring: var(--color-teal-400);
+}
+
+/* CYAN */
+[xyz-accent="cyan"] {
+  --palette-primary: var(--color-cyan-600);
+  --palette-primary-foreground: var(--color-white);
+  --palette-ring: var(--color-cyan-600);
+}
+[xyz-accent="cyan"].dark {
+  --palette-dark-primary: var(--color-cyan-400);
+  --palette-dark-primary-foreground: var(--color-neutral-950);
+  --palette-dark-ring: var(--color-cyan-400);
+}
+
+/* SKY */
+[xyz-accent="sky"] {
+  --palette-primary: var(--color-sky-600);
+  --palette-primary-foreground: var(--color-white);
+  --palette-ring: var(--color-sky-600);
+}
+[xyz-accent="sky"].dark {
+  --palette-dark-primary: var(--color-sky-400);
+  --palette-dark-primary-foreground: var(--color-neutral-950);
+  --palette-dark-ring: var(--color-sky-400);
+}
+
+/* LIME */
+[xyz-accent="lime"] {
+  --palette-primary: var(--color-lime-600);
+  --palette-primary-foreground: var(--color-neutral-900);
+  --palette-ring: var(--color-lime-600);
+}
+[xyz-accent="lime"].dark {
+  --palette-dark-primary: var(--color-lime-400);
+  --palette-dark-primary-foreground: var(--color-neutral-800);
+  --palette-dark-ring: var(--color-lime-400);
+}
+
+/* AMBER */
+[xyz-accent="amber"] {
+  --palette-primary: var(--color-amber-600);
+  --palette-primary-foreground: var(--color-neutral-900);
+  --palette-ring: var(--color-amber-600);
+}
+[xyz-accent="amber"].dark {
+  --palette-dark-primary: var(--color-amber-400);
+  --palette-dark-primary-foreground: var(--color-neutral-800);
+  --palette-dark-ring: var(--color-amber-400);
+}
+
+/* ==========================================================================
+   4. GLOBAL COMPONENT VARIABLES
+   ========================================================================== */
+
+:root {
+  /* ================================
+  INPUT & FORM VARIABLES
+  ================================ */
+  --color-input-placeholder: var(--muted-foreground);
+  --color-input-disabled: var(--muted);
+  --color-input-disabled-foreground: var(--muted-foreground);
+  --color-input-focus: var(--ring);
+  --color-input-invalid: var(--destructive);
+  --color-input-valid: var(--color-success);
+
+  /* ================================
+  INTERACTION STATE VARIABLES
+  ================================ */
+  /* Hover states with fallbacks */
+  --color-primary-hover: var(--primary);
+  --color-secondary-hover: var(--secondary);
+  --color-accent-hover: var(--accent);
+  --color-destructive-hover: var(--destructive);
+  --color-muted-hover: var(--muted);
+
+  /* Active states with fallbacks */
+  --color-primary-active: var(--primary);
+  --color-secondary-active: var(--secondary);
+  --color-accent-active: var(--accent);
+
+  /* Disabled states */
+  --color-disabled: var(--muted);
+  --color-disabled-foreground: var(--muted-foreground);
+  --opacity-disabled: var(--opacity-50);
+
+  /* Selection states */
+  --color-selected: var(--primary);
+  --color-selected-foreground: var(--primary-foreground);
+
+  /* ================================
+  TABLE VARIABLES
+  ================================ */
+  --color-table-header: var(--muted);
+  --color-table-header-foreground: var(--muted-foreground);
+  --color-table-row-hover: var(--muted);
+  --color-table-row-selected: var(--accent);
+  --color-table-border: var(--border);
+
+  /* ================================
+  TOAST/NOTIFICATION VARIABLES
+  ================================ */
+  --color-toast-background: var(--card);
+  --color-toast-foreground: var(--card-foreground);
+  --color-toast-border: var(--border);
+  --color-toast-success: var(--color-success);
+  --color-toast-error: var(--destructive);
+  --color-toast-warning: var(--color-warning);
+  --color-toast-info: var(--color-info);
+
+  /* ================================
+  SCROLL VARIABLES
+  ================================ */
+  --scrollbar-track: var(--muted);
+  --scrollbar-thumb: var(--accent);
+  --scrollbar-thumb-hover: var(--color-accent-hover);
+
+  /* ================================
+  LOADING/SKELETON VARIABLES
+  ================================ */
+  --color-skeleton: var(--muted);
+
+  /* ================================
+  PROGRESS VARIABLES
+  ================================ */
+  --color-progress-background: var(--secondary);
+  --color-progress-foreground: var(--primary);
+
+  /* ================================
+  SWITCH/TOGGLE VARIABLES
+  ================================ */
+  --color-switch-background: var(--input);
+  --color-switch-foreground: var(--background);
+  --color-switch-thumb: var(--background);
+  --color-switch-checked: var(--primary);
+
+  /* ================================
+  BADGE VARIABLES
+  ================================ */
+  --color-badge-default: var(--primary);
+  --color-badge-default-foreground: var(--primary-foreground);
+  --color-badge-secondary: var(--secondary);
+  --color-badge-secondary-foreground: var(--secondary-foreground);
+  --color-badge-outline: transparent;
+  --color-badge-outline-foreground: var(--foreground);
+  --color-badge-destructive: var(--destructive);
+  --color-badge-destructive-foreground: var(--destructive-foreground);
+
+  /* ================================
+  SEPARATOR VARIABLES
+  ================================ */
+  --color-separator: var(--border);
+
+  /* ================================
+  COMMAND/SEARCH VARIABLES
+  ================================ */
+  --color-command-input: var(--background);
+  --color-command-input-foreground: var(--foreground);
+  --color-command-item-hover: var(--accent);
+  --color-command-item-selected: var(--accent);
+  --color-command-separator: var(--border);
+
+  /* ================================
+  CALENDAR VARIABLES
+  ================================ */
+  --color-calendar-cell-hover: var(--accent);
+  --color-calendar-cell-selected: var(--primary);
+  --color-calendar-cell-selected-foreground: var(--primary-foreground);
+  --color-calendar-cell-today: var(--accent);
+  --color-calendar-cell-outside: var(--muted-foreground);
+}
+
+/* ================================
+BROWSER SUPPORT ENHANCEMENTS
+================================ */
+
+/* Enhanced hover states for browsers that support color-mix */
+@supports (color: color-mix(in oklch, red, blue)) {
+  :root {
+    --color-primary-hover: color-mix(in oklch, var(--primary) 85%, transparent);
+    --color-secondary-hover: color-mix(in oklch, var(--secondary) 80%, transparent);
+    --color-accent-hover: color-mix(in oklch, var(--accent) 80%, transparent);
+    --color-destructive-hover: color-mix(in oklch, var(--destructive) 85%, transparent);
+    --color-muted-hover: color-mix(in oklch, var(--muted) 80%, transparent);
+
+    --color-primary-active: color-mix(in oklch, var(--primary) 75%, var(--background));
+    --color-secondary-active: color-mix(in oklch, var(--secondary) 70%, var(--foreground));
+    --color-accent-active: color-mix(in oklch, var(--accent) 70%, var(--foreground));
+
+    --color-table-row-hover: color-mix(in oklch, var(--muted) 50%, transparent);
+    --color-table-row-selected: color-mix(in oklch, var(--accent) 50%, transparent);
+  }
+}
+
+/* ================================
+FONT CONFIGURATION
+================================ */
+[xyz-font="geist"] {
+  --font-sans: "Geist";
+  --font-mono: "Geist Mono";
+}
+
+[xyz-font="inter"] {
+  --font-sans: "Inter";
+  --font-mono: "JetBrains Mono";
+}
